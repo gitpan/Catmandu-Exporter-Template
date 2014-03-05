@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Test::Exception;
 
 my $pkg;
 BEGIN {
@@ -17,6 +18,12 @@ Author: [% author %]
 Title: "[% title %]"
 EOF
 
+dies_ok { my $exp = $pkg->new(file =>\$file, xml => 1) };
+
+dies_ok { my $exp = $pkg->new(template_before => $template) };
+
+lives_ok { $pkg->new(template => $template) };
+
 my $exporter = $pkg->new(file => \$file, template => \$template);
 my $data = {
 	author => "brian d foy",
@@ -25,6 +32,7 @@ my $data = {
 
 can_ok $exporter, "add";
 can_ok $exporter, "commit";
+
 
 $exporter->add($data);
 $exporter->commit;
@@ -35,4 +43,6 @@ EOF
 
 is ($file, $result, "Exported Format");
 
-done_testing 5;
+is ($exporter->count, 1, "Count");
+
+done_testing 9;

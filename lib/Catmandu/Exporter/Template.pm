@@ -7,7 +7,7 @@ use Catmandu;
 use Template;
 use Moo;
 
-our $VERSION = 'v0.01';
+our $VERSION = 'v0.02';
 
 with 'Catmandu::Exporter';
 
@@ -84,7 +84,31 @@ Catmandu::Exporter::Template - a TT2 Template exporter
 
 =head1 METHODS
 
-=head2 new(xml => 0|1 , template_before => PATH, template => PATH , template_after => PATH)
+=head2 new(%opts)
+
+=over
+
+=item *
+
+template: Required. Must contain path to the template.
+
+=item *
+
+xml: Optional. Value: 0 or 1. Prepends xml header to the template.
+
+=item *
+
+template_before: Optional. Prepend template.
+
+=item *
+
+template_after: Optional. Append template.
+
+=item *
+
+fix: Optional. Apply Catmandu fixes while exporting.
+
+=back
 
 Catmandu::Exporter::Template can be used to export data objects using
 L<Template Toolkit|Template::Manual>. The only required argument is 'template'
@@ -92,13 +116,17 @@ which points to a file to render for each exported object. Set the
 'template_before' and 'template_before' to add output at the start and end of
 the export.  Optionally provide an 'xml' indicator to include a XML header. 
 
-=head2 add
+=head2 add($hashref)
 
-Add data to the exporter.
+Add data $hashref to the exporter.
 
 =head2 commit
 
 Commit all changes and execute the template_after if given.
+
+=head2 count
+
+Gives the number of records added to the exporter.
 
 =head1 AUTHOR
 

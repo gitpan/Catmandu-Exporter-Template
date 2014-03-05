@@ -23,18 +23,31 @@ SYNOPSIS
         printf "exported %d objects\n" , $exporter->count;
 
 METHODS
-  new(xml => 0|1 , template_before => PATH, template => PATH , template_after => PATH)
+  new(%opts)
+    *   template: Required. Must contain path to the template.
+
+    *   xml: Optional. Value: 0 or 1. Prepends xml header to the template.
+
+    *   template_before: Optional. Prepend template.
+
+    *   template_after: Optional. Append template.
+
+    *   fix: Optional. Apply Catmandu fixes while exporting.
+
     Catmandu::Exporter::Template can be used to export data objects using
     Template Toolkit. The only required argument is 'template' which points
     to a file to render for each exported object. Set the 'template_before'
     and 'template_before' to add output at the start and end of the export.
     Optionally provide an 'xml' indicator to include a XML header.
 
-  add
-    Add data to the exporter.
+  add($hashref)
+    Add data $hashref to the exporter.
 
   commit
     Commit all changes and execute the template_after if given.
+
+  count
+    Gives the number of records added to the exporter.
 
 AUTHOR
     Nicolas Steenlant <nicolas.steenlant@ugent.be>
