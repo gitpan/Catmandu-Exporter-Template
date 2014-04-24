@@ -1,7 +1,7 @@
 {
-   "abstract" : "a TT2 Template exporter",
+   "abstract" : "a TT2 Template exporter in Catmandu style",
    "author" : [
-      "Nicolas Steenlant <nicolas.steenlant@ugent.be>"
+      "Nicolas Steenlant, C<< <nicolas.steenlant at ugent.be> >>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.131560",
@@ -36,7 +36,7 @@
       },
       "runtime" : {
          "requires" : {
-            "Catmandu" : "> 0.8006",
+            "Catmandu" : "0.8014",
             "Moo" : "> 1.004",
             "Template" : "2.22",
             "perl" : "v5.10.1"
@@ -44,6 +44,7 @@
       },
       "test" : {
          "requires" : {
+            "Test::Exception" : "0.32",
             "Test::More" : "0.88"
          }
       }
@@ -60,7 +61,7 @@
          "web" : "https://github.com/LibreCat/Catmandu-Exporter-Template"
       }
    },
-   "version" : "v0.02",
+   "version" : "0.03",
    "x_contributors" : [
       "vpeil <vitali.peil@uni-bielefeld.de>"
    ]

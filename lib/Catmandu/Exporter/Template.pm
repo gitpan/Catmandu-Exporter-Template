@@ -7,7 +7,7 @@ use Catmandu;
 use Template;
 use Moo;
 
-our $VERSION = 'v0.02';
+our $VERSION = '0.03';
 
 with 'Catmandu::Exporter';
 
@@ -58,9 +58,12 @@ sub commit {
 
 =head1 NAME
 
-Catmandu::Exporter::Template - a TT2 Template exporter
+Catmandu::Exporter::Template - a TT2 Template exporter in Catmandu style
+
 
 =head1 SYNOPSIS
+
+If you are new to Catmandu see L<Catmandu::Tutorial>.
 
     use Catmandu::Exporter::Template;
 
@@ -130,11 +133,11 @@ Gives the number of records added to the exporter.
 
 =head1 AUTHOR
 
-Nicolas Steenlant E<lt>nicolas.steenlant@ugent.beE<gt>
+Nicolas Steenlant, C<< <nicolas.steenlant at ugent.be> >>
 
 =head1 CONTRIBUTOR
 
-Vitali Peil E<lt>vitali.peil@uni-bielefeld.deE<gt>
+Vitali Peil, C<< <vitali.peil at uni-bielefeld.de> >>
 
 =head1 LICENSE
 

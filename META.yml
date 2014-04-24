@@ -1,8 +1,9 @@
 ---
-abstract: 'a TT2 Template exporter'
+abstract: 'a TT2 Template exporter in Catmandu style'
 author:
-  - 'Nicolas Steenlant <nicolas.steenlant@ugent.be>'
+  - 'Nicolas Steenlant, C<< <nicolas.steenlant at ugent.be> >>'
 build_requires:
+  Test::Exception: 0.32
   Test::More: 0.88
 configure_requires:
   Module::Build::Tiny: 0.030
@@ -22,7 +23,7 @@ no_index:
     - eg
     - examples
 requires:
-  Catmandu: '> 0.8006'
+  Catmandu: 0.8014
   Moo: '> 1.004'
   Template: 2.22
   perl: v5.10.1
@@ -30,6 +31,6 @@ resources:
   bugtracker: https://github.com/LibreCat/Catmandu-Exporter-Template/issues
   homepage: https://github.com/LibreCat/Catmandu-Exporter-Template
   repository: https://github.com/LibreCat/Catmandu-Exporter-Template.git
-version: v0.02
+version: 0.03
 x_contributors:
   - 'vpeil <vitali.peil@uni-bielefeld.de>'
