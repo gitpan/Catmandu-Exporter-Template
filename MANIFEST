@@ -9,4 +9,5 @@ cpanfile
 dist.ini
 lib/Catmandu/Exporter/Template.pm
 t/basic.t
+t/options.t
 t/release-pod-syntax.t

@@ -2,17 +2,15 @@ NAME
     Catmandu::Exporter::Template - a TT2 Template exporter in Catmandu style
 
 SYNOPSIS
-    If you are new to Catmandu see Catmandu::Tutorial.
-
         use Catmandu::Exporter::Template;
 
         my $exporter = Catmandu::Exporter::Template->new(
-                                    fix => 'myfix.txt'
-                                    xml => 1,
-                                    template_before => '<path>/header.xml' ,
-                                    template => '<path>/record.xml' ,
-                                    template_after => '<path>/footer.xml' ,
-                       );
+                    fix => 'myfix.txt'
+                    xml => 1,
+                    template_before => '<path>/header.xml' ,
+                    template => '<path>/record.xml' ,
+                    template_after => '<path>/footer.xml' ,
+               );
 
         $exporter->add_many($arrayref);
         $exporter->add_many($iterator);
@@ -24,8 +22,21 @@ SYNOPSIS
 
         printf "exported %d objects\n" , $exporter->count;
 
+DESCRIPTION
+    This Catmandu::Exporter can be used to export records using Template
+    Toolkit. If you are new to Catmandu see Catmandu::Tutorial.
+
 METHODS
+    Catmandu::Exporter::Template derives from Catmandu::Exporter with all of
+    its methods ("add", "add_many", "count", and "log"). The following
+    methods are supported in addition:
+
   new(%opts)
+    The only required argument is 'template' which points to a file to
+    render for each exported object. Set the 'template_before' and
+    'template_before' to add output at the start and end of the export.
+    Optionally provide an 'xml' indicator to include a XML header.
+
     *   template: Required. Must contain path to the template.
 
     *   xml: Optional. Value: 0 or 1. Prepends xml header to the template.
@@ -36,26 +47,26 @@ METHODS
 
     *   fix: Optional. Apply Catmandu fixes while exporting.
 
-    Catmandu::Exporter::Template can be used to export data objects using
-    Template Toolkit. The only required argument is 'template' which points
-    to a file to render for each exported object. Set the 'template_before'
-    and 'template_before' to add output at the start and end of the export.
-    Optionally provide an 'xml' indicator to include a XML header.
+    *   start_tag
 
-  add($hashref)
-    Add data $hashref to the exporter.
+    *   end_tag
+
+    *   tag_style
+
+    *   interpolate
+
+    *   eval_perl
 
   commit
     Commit all changes and execute the template_after if given.
-
-  count
-    Gives the number of records added to the exporter.
 
 AUTHOR
     Nicolas Steenlant, "<nicolas.steenlant at ugent.be>"
 
 CONTRIBUTOR
     Vitali Peil, "<vitali.peil at uni-bielefeld.de>"
+
+    Jakob Voss, "<jakob.voss at gbv.de>"
 
 LICENSE
     This library is free software; you can redistribute it and/or modify it

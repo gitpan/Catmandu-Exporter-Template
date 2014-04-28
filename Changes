@@ -1,5 +1,10 @@
 Revision history for Catmandu-Exporter-Template
 
+0.04  2014-04-28 10:10:21 CEST
+	- fix error message
+	- pod
+	- allow more options
+
 0.03  2014-04-24 21:14:22 CEST
 	- pod
 	- dependencies
