@@ -61,7 +61,7 @@
          "web" : "https://github.com/LibreCat/Catmandu-Exporter-Template"
       }
    },
-   "version" : "0.04",
+   "version" : "0.05",
    "x_contributors" : [
       "Jakob Voss <voss@gbv.de>",
       "vpeil <vitali.peil@uni-bielefeld.de>"

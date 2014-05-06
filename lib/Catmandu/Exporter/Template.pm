@@ -7,7 +7,7 @@ use Catmandu;
 use Template;
 use Moo;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 with 'Catmandu::Exporter';
 

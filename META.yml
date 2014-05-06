@@ -31,7 +31,7 @@ resources:
   bugtracker: https://github.com/LibreCat/Catmandu-Exporter-Template/issues
   homepage: https://github.com/LibreCat/Catmandu-Exporter-Template
   repository: https://github.com/LibreCat/Catmandu-Exporter-Template.git
-version: 0.04
+version: 0.05
 x_contributors:
   - 'Jakob Voss <voss@gbv.de>'
   - 'vpeil <vitali.peil@uni-bielefeld.de>'
